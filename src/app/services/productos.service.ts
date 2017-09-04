@@ -7,7 +7,7 @@ export class ProductosService {
   productos:any[] = [];
   productos_filtrados:any[]= [];
   cargando_productos:boolean = false;
-
+cargando:boolean=true;
 
   constructor(public http:Http) {
 
