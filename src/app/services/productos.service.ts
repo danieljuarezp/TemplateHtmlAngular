@@ -13,6 +13,10 @@ export class ProductosService {
     this.cargar_productos();
   }
 
+  public cargar_producto( cod:string){
+    return this.http.get(`https://danieljuarez-c7e2b.firebaseio.com/productos/${ cod }.json`)
+  }
+
   public cargar_productos(){
 
     this.cargando_productos = false;
