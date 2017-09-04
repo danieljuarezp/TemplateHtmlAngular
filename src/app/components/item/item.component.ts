@@ -9,6 +9,7 @@ import {ProductosService} from "../../services/productos.service";
 export class ItemComponent{
 
   producto:any = undefined;
+  productos_filtrados:any = undefined;
   cod:string =undefined;
 
 constructor(private route:ActivatedRoute, 
