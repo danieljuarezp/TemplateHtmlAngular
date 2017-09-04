@@ -5,15 +5,29 @@ import { Http } from "@angular/http";
 export class InformacionService {
 
   info:any = {};
+  equipo:any[] =[];
   cargada:boolean = false;
+  cargada_sobre_nosotros:boolean = false;
 
   constructor( public http:Http ) { 
-    this.http.get("assets/data/info.pagina.json")
+   this.carga_info();
+   this.carga_sobre_nosotros();
+  }
+
+public carga_info(){
+   this.http.get("https://danieljuarez-c7e2b.firebaseio.com/equipo.json")
     .subscribe( data => {
-      console.log(data.json());
       this.cargada = true;
       this.info = data.json();
     })
+}
+
+  public carga_sobre_nosotros(){
+    this.http.get("https://danieljuarez-c7e2b.firebaseio.com/equipo.json")
+    .subscribe( data => {
+      this.cargada_sobre_nosotros = true;
+      this.equipo = data.json();
+    });
   }
 
 }
