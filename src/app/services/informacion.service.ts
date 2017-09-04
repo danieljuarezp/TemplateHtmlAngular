@@ -15,7 +15,7 @@ export class InformacionService {
   }
 
 public carga_info(){
-   this.http.get("https://danieljuarez-c7e2b.firebaseio.com/equipo.json")
+   this.http.get("assets/data/info.pagina.json")
     .subscribe( data => {
       this.cargada = true;
       this.info = data.json();

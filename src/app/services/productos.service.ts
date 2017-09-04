@@ -18,9 +18,10 @@ export class ProductosService {
     this.cargando_productos = false;
       this.http.get("https://danieljuarez-c7e2b.firebaseio.com/productos_idx.json")
       .subscribe( data => {
-        console.log(data.json());
-        this.cargando_productos= true;
+
+          this.cargando_productos= true;
         this.productos = data.json();
+         
       });
 
   }
